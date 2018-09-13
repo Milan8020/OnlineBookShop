@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function check()
+{
+   var x = document.getElementById("r1").checked;
+        if(x){
+          document.getElementById("d1").innerHTML=" <td>Percentage of 12 :</td> <td><input type=\"number\" name='per12' required></td> \n";
+          document.getElementById("d2").innerHTML=" <td>Examination Board of 12 :</td> <td><input type=\"text\" name=\"ebcc\" required></td>\n";
+    }
+    else{
+        document.getElementById("d1").innerHTML = " <tr> <td>Diploma CGPA :</td> <td><input type=\"number\" name='dpc' required></td>\n";
+
+        document.getElementById("d2").innerHTML ="<td>Examination Board of Diploma :</td> <td><input type=\"text\" name=\"ebcd\" required></td>";
+        
+    }
+
+document.getElementById("d3").style.display = "block";
+}
+        function check1(){
+            
+            var p1=document.getElementsByName("pw")[0].value;
+            var p2=document.getElementsByName("pw1")[0].value;
+            var p3=document.getElementById("r1").checked;
+            var p4=document.getElementById("r2").checked;
+           
+            if(!p3 && !p4){
+                alert("Not Chosen Streams !!!!");
+                  return false;   
+        }
+        else if(p1!=p2){
+           alert("Password does not match !!!!");
+            return false;
+        }
+        else
+            return true;
+           }
+              
+        </script>
+          <style>  
+h1 {
+        left:530px;
+	display: inline;
+	position: relative;
+	font: 100px Helvetica, Sans-Serif;
+	color: rgba(0,0,255,0.5); 
+}
+
+h1:after {
+	content: "Video";
+	position: absolute; left: 200px; top: 5px;
+	color: rgba(255,0,0,0.5);   
+}
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #FF0000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=email]:focus {
+    border: 3px solid #6580EA;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #FF0000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.form-submit-button {
+
+background: #0066A2;
+
+color: white;
+
+border-style: outset;
+
+border-color: #0066A2;
+
+height: 50px;
+
+width: 100px;
+
+font: bold 15px arial, sans-serif;
+
+text-shadow:none;
+
+margin-left:180px;
+}
+input[type=text]:focus {
+    border: 3px solid #6580EA;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #FF0000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=number]:focus {
+    border: 3px solid #6580EA;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #FF0000;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=password]:focus {
+    border: 3px solid #6580EA;
+}
+
+
+
+
+
+
+           </style> 
+    </head>
+    <body>
+        <h1 align="center">Fast</h1>
+        <form method="post" action="NewServlet" onsubmit=" return check1()">
+            
+            <table align="center" style="margin-top: 30px;border: 3px blue  solid;padding: 10px;">
+                <tr>
+                    <td>Enrollment Number :</td><td> <input type="number" name="en" required></td>
+            </tr>
+            <tr>
+            <td>Name :</td> <td><input type="text" name="nm" required></td>
+            </tr>
+            <tr>
+                <td>Percentage of 10 :</td> <td><input type="number" name="per10" required></td>
+            </tr>
+            <tr>
+            <td>Examination Board of 10 :</td> <td><input type="text" name="ebc" required></td>
+            </tr>
+            <tr>
+                <td>12/Diploma :</td> <td><input type="radio" id="r1" name="d/12" value="s12" onclick="check();" > 12 <input type="radio"  name="d/12" value="dip" id="r2" onclick="check();">Diploma</td> 
+            </tr>
+            <tr id="d1">
+                
+            </tr>
+            <tr id="d2">
+                
+            </tr>
+                <tr>                
+                 <td>Course Name:</td> <td><select  name="cn" required>
+                <option value="CE">Computer</option>
+               <option value="EC">EC</option>
+               <option value="EE">Electrical</option>
+               <option value="AU">AutoMobile</option>
+                <option value="ME">Mechanical</option>
+               <option value="CE">Chemical</option>
+               </select>
+                 </td>
+                </tr>
+                <tr>
+                    <td>Current CGPA :</td> <td><input type="number" name='cg' required></td>
+            </tr>
+            <tr>
+                <td>Moblie Number :</td> <td><input type="number" name='mn' required></td>
+            </tr>
+            <tr>
+                <td>Email ID :</td> <td><input type="email" name='em' required></td>
+            </tr>
+            <tr>
+                <td>Interested Technologies :</td> <td><input type="checkbox" name="it" value="Java"> Java  <input type="checkbox" name="it" value="Web"> Web  <input type="checkbox" name="it" value="Andriod"> Android</td>
+            </tr>
+            <tr>
+                <td>Future Interest :</td> <td><select name="fi">
+                <option value="P">Placement</option>
+               <option value="T">Training</option>
+               </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Password :</td> <td><input type="password" name='pw' required></td>
+            </tr>
+            <tr>
+                <td>Confirm password :</td> <td><input type="password" name='pw1' required></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="fc" value="true" required> I Agree All Terms and Conditions</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input  class="form-submit-button" type="submit" value="Register"></td>
+                <td></td>
+                 </tr>
+            </table>
+        </form>
+    </body>
+</html>
